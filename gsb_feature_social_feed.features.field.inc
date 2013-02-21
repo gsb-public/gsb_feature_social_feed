@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * gsb_feature_social_feed_fpp.features.field.inc
+ * gsb_feature_social_feed.features.field.inc
  */
 
 /**
  * Implements hook_field_default_fields().
  */
-function gsb_feature_social_feed_fpp_field_default_fields() {
+function gsb_feature_social_feed_field_default_fields() {
   $fields = array();
 
   // Exported field: 'fieldable_panels_pane-gsb_social_feed_fpp-field_feed_source'.

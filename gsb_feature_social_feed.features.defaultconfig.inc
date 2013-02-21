@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * gsb_feature_social_feed_fpp.features.defaultconfig.inc
+ * gsb_feature_social_feed.features.defaultconfig.inc
  */
 
 /**
  * Implements hook_defaultconfig_features().
  */
-function gsb_feature_social_feed_fpp_defaultconfig_features() {
+function gsb_feature_social_feed_defaultconfig_features() {
   return array(
     'gsb_feature_social_feed_fpp' => array(
       'strongarm' => 'strongarm',
@@ -18,7 +18,7 @@ function gsb_feature_social_feed_fpp_defaultconfig_features() {
 /**
  * Implements hook_defaultconfig_strongarm().
  */
-function gsb_feature_social_feed_fpp_defaultconfig_strongarm() {
+function gsb_feature_social_feed_defaultconfig_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

@@ -1,0 +1,9 @@
+name = GSB Feature Social Feed
+description = This adds the social feed feature fpp
+core = 7.x
+package = GSB
+php = 5.2.4
+version = 7.x-1.0
+project = gsb_feature_social_feed
+dependencies[] = features
+dependencies[] = fieldable_panels_panes

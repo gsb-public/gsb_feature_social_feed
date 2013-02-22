@@ -10,6 +10,80 @@
 function gsb_feature_social_feed_field_default_fields() {
   $fields = array();
 
+  // Exported field: 'fieldable_panels_pane-gsb_social_feed_fpp-field_button_title'.
+  $fields['fieldable_panels_pane-gsb_social_feed_fpp-field_button_title'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_button_title',
+      'foreign keys' => array(
+        'format' => array(
+          'columns' => array(
+            'format' => 'format',
+          ),
+          'table' => 'filter_format',
+        ),
+      ),
+      'indexes' => array(
+        'format' => array(
+          0 => 'format',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'text',
+      'settings' => array(
+        'max_length' => '255',
+      ),
+      'translatable' => '0',
+      'type' => 'text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'gsb_social_feed_fpp',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'text',
+          'settings' => array(),
+          'type' => 'text_default',
+          'weight' => 5,
+        ),
+        'ical' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'entity_type' => 'fieldable_panels_pane',
+      'field_name' => 'field_button_title',
+      'label' => 'Button Title',
+      'required' => 0,
+      'settings' => array(
+        'linkit' => array(
+          'enable' => 0,
+          'insert_plugin' => '',
+        ),
+        'text_processing' => '0',
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'text',
+        'settings' => array(
+          'size' => '60',
+        ),
+        'type' => 'text_textfield',
+        'weight' => '6',
+      ),
+      'workbench_access_field' => 0,
+    ),
+  );
+
   // Exported field: 'fieldable_panels_pane-gsb_social_feed_fpp-field_feed_source'.
   $fields['fieldable_panels_pane-gsb_social_feed_fpp-field_feed_source'] = array(
     'field_config' => array(
@@ -114,7 +188,7 @@ function gsb_feature_social_feed_field_default_fields() {
         ),
       ),
       'deleted' => '0',
-      'description' => 'Number of feed items displayed.',
+      'description' => 'Number of tweet items to be displayed.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -132,7 +206,7 @@ function gsb_feature_social_feed_field_default_fields() {
       ),
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_number_display_items',
-      'label' => 'Feed Items',
+      'label' => 'Tweets Count',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -181,7 +255,7 @@ function gsb_feature_social_feed_field_default_fields() {
       'bundle' => 'gsb_social_feed_fpp',
       'default_value' => NULL,
       'deleted' => '0',
-      'description' => '',
+      'description' => 'Twitter name starting with @ or Twitter tag starting with #. Ex. @twitter or #twitter.',
       'display' => array(
         'default' => array(
           'label' => 'above',
@@ -199,8 +273,8 @@ function gsb_feature_social_feed_field_default_fields() {
       ),
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_search_name',
-      'label' => 'Search Name',
-      'required' => 0,
+      'label' => 'Twitter Name / Tag',
+      'required' => 1,
       'settings' => array(
         'linkit' => array(
           'enable' => 0,
@@ -217,80 +291,6 @@ function gsb_feature_social_feed_field_default_fields() {
         ),
         'type' => 'text_textfield',
         'weight' => '4',
-      ),
-      'workbench_access_field' => 0,
-    ),
-  );
-
-  // Exported field: 'fieldable_panels_pane-gsb_social_feed_fpp-field_search_tag'.
-  $fields['fieldable_panels_pane-gsb_social_feed_fpp-field_search_tag'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_search_tag',
-      'foreign keys' => array(
-        'format' => array(
-          'columns' => array(
-            'format' => 'format',
-          ),
-          'table' => 'filter_format',
-        ),
-      ),
-      'indexes' => array(
-        'format' => array(
-          0 => 'format',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'text',
-      'settings' => array(
-        'max_length' => '255',
-      ),
-      'translatable' => '0',
-      'type' => 'text',
-    ),
-    'field_instance' => array(
-      'bundle' => 'gsb_social_feed_fpp',
-      'default_value' => NULL,
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'above',
-          'module' => 'text',
-          'settings' => array(),
-          'type' => 'text_default',
-          'weight' => 0,
-        ),
-        'ical' => array(
-          'label' => 'above',
-          'settings' => array(),
-          'type' => 'hidden',
-          'weight' => 0,
-        ),
-      ),
-      'entity_type' => 'fieldable_panels_pane',
-      'field_name' => 'field_search_tag',
-      'label' => 'Search Tag',
-      'required' => 0,
-      'settings' => array(
-        'linkit' => array(
-          'enable' => 0,
-          'insert_plugin' => '',
-        ),
-        'text_processing' => '0',
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'text',
-        'settings' => array(
-          'size' => '60',
-        ),
-        'type' => 'text_textfield',
-        'weight' => '3',
       ),
       'workbench_access_field' => 0,
     ),
@@ -348,7 +348,7 @@ function gsb_feature_social_feed_field_default_fields() {
       ),
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_source_link',
-      'label' => 'Source Link',
+      'label' => 'Button Link',
       'required' => 0,
       'settings' => array(
         'attributes' => array(
@@ -378,7 +378,7 @@ function gsb_feature_social_feed_field_default_fields() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_field',
-        'weight' => '1',
+        'weight' => '7',
       ),
       'workbench_access_field' => 0,
     ),
@@ -386,12 +386,13 @@ function gsb_feature_social_feed_field_default_fields() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Feed Items');
+  t('Button Link');
+  t('Button Title');
   t('Feed Source');
-  t('Number of feed items displayed.');
-  t('Search Name');
-  t('Search Tag');
-  t('Source Link');
+  t('Number of tweet items to be displayed.');
+  t('Tweets Count');
+  t('Twitter Name / Tag');
+  t('Twitter name starting with @ or Twitter tag starting with #. Ex. @twitter or #twitter.');
 
   return $fields;
 }

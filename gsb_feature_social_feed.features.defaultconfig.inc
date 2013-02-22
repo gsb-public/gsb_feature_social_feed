@@ -9,7 +9,7 @@
  */
 function gsb_feature_social_feed_defaultconfig_features() {
   return array(
-    'gsb_feature_social_feed_fpp' => array(
+    'gsb_feature_social_feed' => array(
       'strongarm' => 'strongarm',
     ),
   );
@@ -30,7 +30,7 @@ function gsb_feature_social_feed_defaultconfig_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '2',
+          'weight' => '1',
         ),
       ),
       'display' => array(),

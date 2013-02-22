@@ -3,6 +3,12 @@
  * @file
  * Code for the GSB Feature Social Feed feature.
  */
+
+include_once 'gsb_feature_social_feed.features.inc';
+/**
+ * @file
+ * Code for the GSB Feature Social Feed feature.
+ */
  
 /**
  * Implements hook_entity_info_alter().

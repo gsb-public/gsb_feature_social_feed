@@ -34,7 +34,7 @@ function gsb_feature_social_feed_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
-        'max_length' => '255',
+        'max_length' => '36',
       ),
       'translatable' => '0',
       'type' => 'text',

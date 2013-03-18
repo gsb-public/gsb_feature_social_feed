@@ -34,7 +34,7 @@ function gsb_feature_social_feed_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
-        'max_length' => '36',
+        'max_length' => '255',
       ),
       'translatable' => '0',
       'type' => 'text',
@@ -61,7 +61,7 @@ function gsb_feature_social_feed_field_default_fields() {
       ),
       'entity_type' => 'fieldable_panels_pane',
       'field_name' => 'field_button_title',
-      'label' => 'Button Title',
+      'label' => 'Title',
       'required' => 0,
       'settings' => array(
         'linkit' => array(
@@ -387,9 +387,9 @@ function gsb_feature_social_feed_field_default_fields() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Button Link');
-  t('Button Title');
   t('Feed Source');
   t('Number of tweet items to be displayed.');
+  t('Title');
   t('Tweets Count');
   t('Twitter Name / Tag');
   t('Twitter name starting with @ or Twitter tag starting with #. Ex. @twitter or #twitter.');

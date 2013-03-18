@@ -36,3 +36,19 @@ include_once 'gsb_feature_social_feed.features.inc';
   );
 
 }
+
+/**
+ * Implements hook_form_alter()
+ */
+function gsb_feature_social_feed_form_alter(&$form, &$form_state, $form_id) {
+
+  if ($form_id == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form' && $form['#bundle'] == 'gsb_social_feed_fpp') {
+
+    $test = "test";
+
+    $form['field_button_title']['und'][0]['value']['#maxlength'] = '20';
+    $form['field_button_title']['und'][0]['value']['#description'] = t('Limited to 20 characters');
+
+  }
+
+}  

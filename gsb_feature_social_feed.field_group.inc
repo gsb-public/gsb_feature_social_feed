@@ -26,7 +26,6 @@ function gsb_feature_social_feed_field_group_info() {
       0 => 'field_button_title',
       1 => 'field_number_display_items',
       2 => 'field_search_name',
-      3 => 'field_source_link',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

@@ -10,8 +10,8 @@
 function gsb_feature_social_feed_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'fieldable_panels_pane-gsb_social_feed_fpp-field_button_title'.
-  $fields['fieldable_panels_pane-gsb_social_feed_fpp-field_button_title'] = array(
+  // Exported field: 'fieldable_panels_pane-social_feed-field_button_title'.
+  $fields['fieldable_panels_pane-social_feed-field_button_title'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -34,13 +34,13 @@ function gsb_feature_social_feed_field_default_fields() {
       'locked' => '0',
       'module' => 'text',
       'settings' => array(
-        'max_length' => '255',
+        'max_length' => '20',
       ),
       'translatable' => '0',
       'type' => 'text',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_social_feed_fpp',
+      'bundle' => 'social_feed',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -75,6 +75,8 @@ function gsb_feature_social_feed_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
+          'maxlength_js' => 1,
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'size' => '60',
         ),
         'type' => 'text_textfield',
@@ -84,8 +86,8 @@ function gsb_feature_social_feed_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_social_feed_fpp-field_feed_source'.
-  $fields['fieldable_panels_pane-gsb_social_feed_fpp-field_feed_source'] = array(
+  // Exported field: 'fieldable_panels_pane-social_feed-field_feed_source'.
+  $fields['fieldable_panels_pane-social_feed-field_feed_source'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -110,7 +112,7 @@ function gsb_feature_social_feed_field_default_fields() {
       'type' => 'list_text',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_social_feed_fpp',
+      'bundle' => 'social_feed',
       'default_value' => array(
         0 => array(
           'value' => 'Twitter',
@@ -153,8 +155,8 @@ function gsb_feature_social_feed_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_social_feed_fpp-field_social_display_num'.
-  $fields['fieldable_panels_pane-gsb_social_feed_fpp-field_social_display_num'] = array(
+  // Exported field: 'fieldable_panels_pane-social_feed-field_social_display_num'.
+  $fields['fieldable_panels_pane-social_feed-field_social_display_num'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -180,10 +182,10 @@ function gsb_feature_social_feed_field_default_fields() {
         'allowed_values_function' => '',
       ),
       'translatable' => '0',
-      'type' => 'list_text',
+      'type' => 'list_integer',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_social_feed_fpp',
+      'bundle' => 'social_feed',
       'default_value' => array(
         0 => array(
           'value' => '3',
@@ -226,8 +228,8 @@ function gsb_feature_social_feed_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_social_feed_fpp-field_source_link'.
-  $fields['fieldable_panels_pane-gsb_social_feed_fpp-field_source_link'] = array(
+  // Exported field: 'fieldable_panels_pane-social_feed-field_source_link'.
+  $fields['fieldable_panels_pane-social_feed-field_source_link'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -257,7 +259,7 @@ function gsb_feature_social_feed_field_default_fields() {
       'type' => 'link_field',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_social_feed_fpp',
+      'bundle' => 'social_feed',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
@@ -314,8 +316,8 @@ function gsb_feature_social_feed_field_default_fields() {
     ),
   );
 
-  // Exported field: 'fieldable_panels_pane-gsb_social_feed_fpp-field_twitter_search'.
-  $fields['fieldable_panels_pane-gsb_social_feed_fpp-field_twitter_search'] = array(
+  // Exported field: 'fieldable_panels_pane-social_feed-field_twitter_search'.
+  $fields['fieldable_panels_pane-social_feed-field_twitter_search'] = array(
     'field_config' => array(
       'active' => '1',
       'cardinality' => '1',
@@ -344,7 +346,7 @@ function gsb_feature_social_feed_field_default_fields() {
       'type' => 'text',
     ),
     'field_instance' => array(
-      'bundle' => 'gsb_social_feed_fpp',
+      'bundle' => 'social_feed',
       'default_value' => NULL,
       'deleted' => '0',
       'description' => '',

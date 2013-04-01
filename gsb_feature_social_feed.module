@@ -14,14 +14,14 @@ include_once 'gsb_feature_social_feed.features.inc';
  * Implements hook_entity_info_alter().
  *
  * Here we tell Drupal about our custom fpp -
- * 'gsb_social_feed_fpp'.
+ *   'social_feed'.
  *
  */
  function gsb_feature_social_feed_entity_info_alter(&$entity_info) {
 
   // create the GSB Social Feed FPP
 
-  $entity_info['fieldable_panels_pane']['bundles']['gsb_social_feed_fpp'] = array(
+  $entity_info['fieldable_panels_pane']['bundles']['social_feed'] = array(
     'label' => t('Add GSB Social Feed'),
     'pane category' => t('GSB Social Feed FPP'),
     'pane top level' => TRUE, // set to true to make this show as a top level icon
@@ -30,7 +30,7 @@ include_once 'gsb_feature_social_feed.features.inc';
       'path' => 'admin/structure/fieldable-panels-panes/manage/%fieldable_panels_panes_type',
       'bundle argument' => 4,
       // Note that this has all _ replaced with - from the bundle name.
-      'real path' => 'admin/structure/fieldable-panels-panes/manage/gsb-social-feed-fpp',
+      'real path' => 'admin/structure/fieldable-panels-panes/manage/social-feed',
       'access arguments' => array('administer fieldable panels panes'),
     ),
   );

@@ -16,7 +16,7 @@ function gsb_feature_social_feed_field_group_info() {
   $field_group->identifier = 'group_twitter_feed|fieldable_panels_pane|gsb_social_feed_fpp|form';
   $field_group->group_name = 'group_twitter_feed';
   $field_group->entity_type = 'fieldable_panels_pane';
-  $field_group->bundle = 'gsb_social_feed_fpp';
+  $field_group->bundle = 'social_feed';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(

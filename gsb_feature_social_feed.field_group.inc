@@ -13,19 +13,18 @@ function gsb_feature_social_feed_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_twitter_feed|fieldable_panels_pane|gsb_social_feed_fpp|form';
+  $field_group->identifier = 'group_twitter_feed|fieldable_panels_pane|social_feed|form';
   $field_group->group_name = 'group_twitter_feed';
   $field_group->entity_type = 'fieldable_panels_pane';
-  $field_group->bundle = 'gsb_social_feed_fpp';
+  $field_group->bundle = 'social_feed';
   $field_group->mode = 'form';
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Twitter Feed',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
-      0 => 'field_button_title',
-      1 => 'field_number_display_items',
-      2 => 'field_search_name',
+      0 => 'field_twitter_title',
+      1 => 'field_twitter_search',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -37,7 +36,7 @@ function gsb_feature_social_feed_field_group_info() {
       ),
     ),
   );
-  $export['group_twitter_feed|fieldable_panels_pane|gsb_social_feed_fpp|form'] = $field_group;
+  $export['group_twitter_feed|fieldable_panels_pane|social_feed|form'] = $field_group;
 
   return $export;
 }

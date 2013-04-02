@@ -24,19 +24,19 @@ function gsb_feature_social_feed_defaultconfig_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_fieldable_panels_pane__gsb_social_feed_fpp';
+  $strongarm->name = 'field_bundle_settings_fieldable_panels_pane__social_feed';
   $strongarm->value = array(
     'view_modes' => array(),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '1',
+          'weight' => '0',
         ),
       ),
       'display' => array(),
     ),
   );
-  $export['field_bundle_settings_fieldable_panels_pane__gsb_social_feed_fpp'] = $strongarm;
+  $export['field_bundle_settings_fieldable_panels_pane__social_feed'] = $strongarm;
 
   return $export;
 }

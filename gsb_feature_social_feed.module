@@ -14,7 +14,7 @@ include_once 'gsb_feature_social_feed.features.inc';
  * Implements hook_entity_info_alter().
  *
  * Here we tell Drupal about our custom fpp -
- *   'social_feed'.
+ * 'social_feed'.
  *
  */
  function gsb_feature_social_feed_entity_info_alter(&$entity_info) {

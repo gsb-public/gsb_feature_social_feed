@@ -182,7 +182,7 @@ function gsb_feature_social_feed_field_default_fields() {
         'allowed_values_function' => '',
       ),
       'translatable' => '0',
-      'type' => 'list_text',
+      'type' => 'list_integer',
     ),
     'field_instance' => array(
       'bundle' => 'social_feed',

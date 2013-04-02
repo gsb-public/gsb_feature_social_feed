@@ -23,4 +23,4 @@ features[field][] = fieldable_panels_pane-social_feed-field_feed_source
 features[field][] = fieldable_panels_pane-social_feed-field_social_display_num
 features[field][] = fieldable_panels_pane-social_feed-field_source_link
 features[field][] = fieldable_panels_pane-social_feed-field_twitter_search
-features[field_group][] = group_twitter_feed|fieldable_panels_pane|gsb_social_feed_fpp|form
+features[field_group][] = group_twitter_feed|fieldable_panels_pane|social_feed|form

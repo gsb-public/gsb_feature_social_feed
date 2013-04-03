@@ -9,7 +9,7 @@ include_once 'gsb_feature_social_feed.features.inc';
  * @file
  * Code for the GSB Feature Social Feed feature.
  */
- 
+
 /**
  * Implements hook_entity_info_alter().
  *
@@ -22,8 +22,8 @@ include_once 'gsb_feature_social_feed.features.inc';
   // create the GSB Social Feed FPP
 
   $entity_info['fieldable_panels_pane']['bundles']['social_feed'] = array(
-    'label' => t('Add GSB Social Feed'),
-    'pane category' => t('GSB Social Feed FPP'),
+    'label' => t('Social Feed'),
+    'pane category' => t('GSB panes'),
     'pane top level' => TRUE, // set to true to make this show as a top level icon
     'pane icon' => drupal_get_path('module', 'panopoly_widgets') . '/images/icon_text.png',
     'admin' => array(

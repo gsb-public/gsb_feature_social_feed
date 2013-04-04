@@ -21,10 +21,12 @@ function gsb_feature_social_feed_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Twitter Feed',
-    'weight' => '3',
+    'weight' => '2',
     'children' => array(
-      0 => 'field_twitter_search',
-      1 => 'field_twitter_title',
+      0 => 'field_button_title',
+      1 => 'field_source_link',
+      2 => 'field_twitter_search',
+      3 => 'field_social_display_num',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

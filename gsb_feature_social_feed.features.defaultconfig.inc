@@ -26,14 +26,27 @@ function gsb_feature_social_feed_defaultconfig_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_fieldable_panels_pane__social_feed';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'ical' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
-      'form' => array(
+      'form' => array(),
+      'display' => array(
         'title' => array(
-          'weight' => '0',
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
         ),
       ),
-      'display' => array(),
     ),
   );
   $export['field_bundle_settings_fieldable_panels_pane__social_feed'] = $strongarm;

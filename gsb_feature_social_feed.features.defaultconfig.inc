@@ -38,7 +38,11 @@ function gsb_feature_social_feed_defaultconfig_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'title' => array(
+          'weight' => '0',
+        ),
+      ),
       'display' => array(
         'title' => array(
           'default' => array(

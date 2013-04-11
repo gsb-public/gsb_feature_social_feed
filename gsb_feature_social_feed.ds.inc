@@ -20,14 +20,14 @@ function gsb_feature_social_feed_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
-        0 => 'title',
+        0 => 'field_social_twitter_title',
         1 => 'field_feed_source',
         2 => 'field_twitter_search',
         3 => 'field_social_display_num',
       ),
     ),
     'fields' => array(
-      'title' => 'ds_content',
+      'field_social_twitter_title' => 'ds_content',
       'field_feed_source' => 'ds_content',
       'field_twitter_search' => 'ds_content',
       'field_social_display_num' => 'ds_content',
@@ -35,7 +35,6 @@ function gsb_feature_social_feed_ds_layout_settings_info() {
     'classes' => array(),
     'wrappers' => array(
       'ds_content' => 'div',
-      'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

@@ -36,6 +36,9 @@ function gsb_feature_social_feed_defaultconfig_strongarm() {
       'token' => array(
         'custom_settings' => FALSE,
       ),
+      'megamenu' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -46,8 +49,8 @@ function gsb_feature_social_feed_defaultconfig_strongarm() {
       'display' => array(
         'title' => array(
           'default' => array(
-            'weight' => '0',
-            'visible' => TRUE,
+            'weight' => '4',
+            'visible' => FALSE,
           ),
         ),
       ),

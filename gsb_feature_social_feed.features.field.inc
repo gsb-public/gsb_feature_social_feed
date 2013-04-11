@@ -192,13 +192,13 @@ function gsb_feature_social_feed_field_default_fields() {
       'description' => 'Enter in a title to override the default title from twitter.',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
             'conditions' => array(),
           ),
-          'type' => 'text_default',
-          'weight' => 4,
+          'type' => 'text_plain',
+          'weight' => '0',
         ),
         'ical' => array(
           'label' => 'above',

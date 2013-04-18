@@ -1,24 +1,13 @@
 <?php
 /**
  * @file
- * gsb_feature_social_feed.features.defaultconfig.inc
+ * gsb_feature_social_feed.strongarm.inc
  */
 
 /**
- * Implements hook_defaultconfig_features().
+ * Implements hook_strongarm().
  */
-function gsb_feature_social_feed_defaultconfig_features() {
-  return array(
-    'gsb_feature_social_feed' => array(
-      'strongarm' => 'strongarm',
-    ),
-  );
-}
-
-/**
- * Implements hook_defaultconfig_strongarm().
- */
-function gsb_feature_social_feed_defaultconfig_strongarm() {
+function gsb_feature_social_feed_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

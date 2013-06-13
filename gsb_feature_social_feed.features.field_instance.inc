@@ -51,7 +51,7 @@ function gsb_feature_social_feed_field_default_field_instances() {
         'maxlength_js_label' => '',
       ),
       'type' => 'options_select',
-      'weight' => 1,
+      'weight' => -9,
     ),
     'workbench_access_field' => 0,
   );
@@ -97,7 +97,7 @@ function gsb_feature_social_feed_field_default_field_instances() {
         'maxlength_js_label' => '',
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => -6,
     ),
     'workbench_access_field' => 0,
   );
@@ -147,7 +147,7 @@ function gsb_feature_social_feed_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 6,
+      'weight' => -5,
     ),
     'workbench_access_field' => 0,
   );
@@ -197,7 +197,7 @@ function gsb_feature_social_feed_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => -7,
     ),
     'workbench_access_field' => 0,
   );

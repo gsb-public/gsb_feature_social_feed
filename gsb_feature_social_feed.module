@@ -36,3 +36,73 @@ include_once 'gsb_feature_social_feed.features.inc';
   );
 
 }
+
+/**
+ * Implements hook_menu().
+ */
+function gsb_feature_social_feed_menu() {
+  $items['gfsf_user_timeline'] = array(
+    'title' => 'User timeline',
+    'page callback' => 'gfsf_twitter_user_timeline',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'file' => 'twitterlib.inc',
+    'file path' => drupal_get_path('module', 'gsb_feature_social_feed') .'/includes',
+  );
+  $items['gfsf_search_tweets'] = array(
+    'title' => 'Search tweets',
+    'page callback' => 'gfsf_twitter_search_tweets',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'file' => 'twitterlib.inc',
+    'file path' => drupal_get_path('module', 'gsb_feature_social_feed') .'/includes',
+  );
+  $items['admin/config/services/gfsf_oauth_config'] = array(
+    'title' => 'GSB Social Feed OAuth config',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('gsb_feature_social_feed_oauth_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Form callback.
+ *
+ * Configuration form for OAuth tokens.
+ */
+function gsb_feature_social_feed_oauth_form($form, $form_state) {
+  $form = array();
+
+  $form['gfsf_twitter_consumer_key'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Consumer key'),
+    '#default_value' => variable_get('gfsf_twitter_consumer_key', ''),
+    '#required' => TRUE,
+  );
+
+  $form['gfsf_twitter_consumer_secret'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Consumer key secret'),
+    '#default_value' => variable_get('gfsf_twitter_consumer_secret', ''),
+    '#required' => TRUE,
+  );
+
+  $form['gfsf_twitter_access_token'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Access key'),
+    '#default_value' => variable_get('gfsf_twitter_access_token', ''),
+    '#required' => TRUE,
+  );
+
+  $form['gssf_twitter_access_token_secret'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Access key secret'),
+    '#default_value' => variable_get('gssf_twitter_access_token_secret', ''),
+    '#required' => TRUE,
+  );
+
+  return system_settings_form($form);
+}

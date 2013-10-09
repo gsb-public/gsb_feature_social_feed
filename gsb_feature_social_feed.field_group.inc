@@ -24,7 +24,7 @@ function gsb_feature_social_feed_field_group_info() {
     'weight' => '-8',
     'children' => array(
       0 => 'field_social_display_num',
-      1 => 'field_twitter_search',      
+      1 => 'field_twitter_search',
       2 => 'field_social_twitter_title',
     ),
     'format_type' => 'fieldset',

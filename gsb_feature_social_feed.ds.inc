@@ -22,13 +22,15 @@ function gsb_feature_social_feed_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_social_twitter_title',
         1 => 'field_feed_source',
-        2 => 'field_twitter_search',
-        3 => 'field_social_display_num',
+        2 => 'group_wrapper_twitter',
+        3 => 'field_twitter_search',
+        4 => 'field_social_display_num',
       ),
     ),
     'fields' => array(
       'field_social_twitter_title' => 'ds_content',
       'field_feed_source' => 'ds_content',
+      'group_wrapper_twitter' => 'ds_content',
       'field_twitter_search' => 'ds_content',
       'field_social_display_num' => 'ds_content',
     ),
@@ -39,6 +41,8 @@ function gsb_feature_social_feed_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
   );
   $export['fieldable_panels_pane|social_feed|default'] = $ds_layout;
 

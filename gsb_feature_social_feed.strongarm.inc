@@ -28,6 +28,12 @@ function gsb_feature_social_feed_strongarm() {
       'megamenu' => array(
         'custom_settings' => FALSE,
       ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'people_fpp' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -38,7 +44,7 @@ function gsb_feature_social_feed_strongarm() {
       'display' => array(
         'title' => array(
           'default' => array(
-            'weight' => '4',
+            'weight' => '6',
             'visible' => FALSE,
           ),
         ),

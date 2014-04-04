@@ -106,3 +106,30 @@ function gsb_feature_social_feed_oauth_form($form, $form_state) {
 
   return system_settings_form($form);
 }
+
+/**
+ * Implements hook_fieldable_panels_pane_view().
+ */
+function gsb_feature_social_feed_light_fieldable_panels_pane_view($entity, $view_mode, $langcode) {
+  if ($entity->bundle != 'social_feed') {
+    return;
+  }
+
+  $entity->content['#attached']['library'][] = array('gsb_feature_social_feed', 'gsb_tweetfeed');
+}
+
+/**
+ * Implements hook_library().
+ */
+function gsb_feature_social_feed_library() {
+  $path = drupal_get_path('module', 'gsb_feature_social_feed');
+  $libraries['gsb_tweetfeed'] = array(
+    'title' => 'GSB Twitterfeed',
+    'version' => '1.0',
+    'js' => array(
+      $path . '/js/gsb_tweetfeed.js' => array('group' => JS_LIBRARY),
+      $path . '/js/gsb_feature_social_feed.js' => array('group' => JS_DEFAULT),
+    ),
+  );
+  return $libraries;
+}

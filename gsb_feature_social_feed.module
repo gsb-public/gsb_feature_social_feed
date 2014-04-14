@@ -110,7 +110,7 @@ function gsb_feature_social_feed_oauth_form($form, $form_state) {
 /**
  * Implements hook_fieldable_panels_pane_view().
  */
-function gsb_feature_social_feed_light_fieldable_panels_pane_view($entity, $view_mode, $langcode) {
+function gsb_feature_social_feed_fieldable_panels_pane_view($entity, $view_mode, $langcode) {
   if ($entity->bundle != 'social_feed') {
     return;
   }

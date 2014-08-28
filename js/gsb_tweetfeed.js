@@ -70,17 +70,18 @@ gsb_tweetfeed = {
       },
       success: function(data) {
         var html = '<div class="tweet">TWEET_TEXT<p class="time">tweetime</p>';
-        var title = $(tempAppendTo).find('.field-name-field-feed-source'),
+        var title = $(tempAppendTo).find('.field-name-field-feed-source');
         overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
         if (overrideTitle != '' && overrideTitle != ' ') {
-          title.text(overrideTitle);
+          titleText = overrideTitle;
         }
         else {
-          title.text(data[0].user.name);
+          titleText = data[0].user.name;
         }
-        title.wrap('<a target="_blank" href="' + 'https://twitter.com/' + data[0].user.screen_name +'">');
+
         var $searchText = $('.field-name-field-twitter-search');
-        $searchText.replaceWith('<a target="_blank" href="' + 'https://twitter.com/' + data[0].user.screen_name +'">' +  $searchText.text() + '</a>');
+        title.html('<a target="_blank" href="' + 'https://twitter.com/' + data[0].user.screen_name +'"><span class="twitter-icon"></span><span class="twitter-title-text">' + titleText + '</span>\n<span class="twitter-search-text">' + $searchText.text() + '</span></a>');          $searchText.remove();
+
         // append tweets into page
         for (var i = 0; i < data.length; i++) {
           $(tempAppendTo).append(

@@ -69,7 +69,7 @@ gsb_tweetfeed = {
         include_rts: 1
       },
       success: function(data) {
-        var html = '<div class="tweet">TWEET_TEXT<p class="time">tweetime</p>';
+        var html = '<div class="tweet">TWEET_TEXT<div class="time">tweetime</div></div>';
         var title = $(tempAppendTo).find('.field-name-field-feed-source');
         overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
         if (overrideTitle != '' && overrideTitle != ' ') {
@@ -80,7 +80,7 @@ gsb_tweetfeed = {
         }
 
         var $searchText = $('.field-name-field-twitter-search');
-        title.html('<a target="_blank" href="' + 'https://twitter.com/' + data[0].user.screen_name +'"><span class="twitter-icon"></span><span class="twitter-title-text">' + titleText + '</span>\n<span class="twitter-search-text">' + $searchText.text() + '</span></a>');          $searchText.remove();
+        title.html('<a target="_blank" href="' + 'https://twitter.com/' + data[0].user.screen_name +'"><span class="twitter-title-text">' + titleText + '</span>\n<span class="twitter-search-text">' + $searchText.text() + '</span></a>');          $searchText.remove();
 
         // append tweets into page
         for (var i = 0; i < data.length; i++) {

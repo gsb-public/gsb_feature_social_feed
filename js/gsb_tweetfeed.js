@@ -99,7 +99,16 @@ gsb_tweetfeed = {
     hashtagurl = '/gfsf_search_tweets?search=' + gsb_tweetfeed.search;
     $.getJSON( hashtagurl, function( data ) {
       var html = '<div class="tweet"><span class="tweet-from-user">FROM-USER: </span>TWEET_TEXT<div class="time">tweetime</div>';
-      $('.field-name-field-twitter-search').replaceWith('<a target="_blank" href="' + 'https://twitter.com/#' + gsb_tweetfeed.search +'">#' + gsb_tweetfeed.search + '</a>');
+      overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
+      if (overrideTitle != '' && overrideTitle != ' ') {
+        titleText = overrideTitle;
+      }
+      else {
+        titleText = data[0].user.name;
+      }
+      var $searchText = $('.field-name-field-feed-source');
+      $searchText.remove();
+      $('.field-name-field-twitter-search').replaceWith('<a target="_blank" href="' + 'https://twitter.com/#' + gsb_tweetfeed.search +'"><span class="twitter-title-text">' + titleText + '</span>#' + gsb_tweetfeed.search + '</a>');
       for (var i = 0; i < gsb_tweetfeed.numTweets; i++) {
         $(tempAppendTo).append(
           html.replace('TWEET_TEXT', gsb_tweetfeed.ify.clean(data['statuses'][i].text) )

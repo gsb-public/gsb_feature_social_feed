@@ -60,7 +60,8 @@ function gsb_feature_social_feed_field_group_info() {
     'format_settings' => array(
       'label' => 'Twitter handle',
       'instance_settings' => array(
-        'classes' => '',
+        'id' => '',
+        'classes' => 'group-wrapper-twitter',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',

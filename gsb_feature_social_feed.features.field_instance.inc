@@ -10,7 +10,8 @@
 function gsb_feature_social_feed_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'fieldable_panels_pane-social_feed-field_feed_source'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-social_feed-field_feed_source'
   $field_instances['fieldable_panels_pane-social_feed-field_feed_source'] = array(
     'bundle' => 'social_feed',
     'default_value' => array(
@@ -42,6 +43,8 @@ function gsb_feature_social_feed_field_default_field_instances() {
     'label' => 'Feed Source',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -56,7 +59,8 @@ function gsb_feature_social_feed_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-social_feed-field_social_display_num'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-social_feed-field_social_display_num'
   $field_instances['fieldable_panels_pane-social_feed-field_social_display_num'] = array(
     'bundle' => 'social_feed',
     'default_value' => array(
@@ -88,6 +92,8 @@ function gsb_feature_social_feed_field_default_field_instances() {
     'label' => 'Number of Tweets to Show',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -102,7 +108,8 @@ function gsb_feature_social_feed_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-social_feed-field_social_twitter_title'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-social_feed-field_social_twitter_title'
   $field_instances['fieldable_panels_pane-social_feed-field_social_twitter_title'] = array(
     'bundle' => 'social_feed',
     'default_value' => NULL,
@@ -131,6 +138,8 @@ function gsb_feature_social_feed_field_default_field_instances() {
     'label' => 'Override Title',
     'required' => 0,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'linkit' => array(
         'enable' => 0,
         'insert_plugin' => '',
@@ -152,7 +161,8 @@ function gsb_feature_social_feed_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
-  // Exported field_instance: 'fieldable_panels_pane-social_feed-field_twitter_search'
+  // Exported field_instance:
+  // 'fieldable_panels_pane-social_feed-field_twitter_search'
   $field_instances['fieldable_panels_pane-social_feed-field_twitter_search'] = array(
     'bundle' => 'social_feed',
     'default_value' => NULL,
@@ -181,6 +191,8 @@ function gsb_feature_social_feed_field_default_field_instances() {
     'label' => 'Twitter Name/Hash Tag',
     'required' => 1,
     'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
       'linkit' => array(
         'enable' => 0,
         'insert_plugin' => '',

@@ -69,6 +69,10 @@ gsb_tweetfeed = {
         include_rts: 1
       },
       success: function(data) {
+        // hide the twitter block if empty
+        if (data.length == 0) {
+          $(tempAppendTo).hide();
+        }
         var html = '<div class="tweet">TWEET_TEXT<div class="time">tweetime</div></div>';
         var title = $(tempAppendTo).find('.field-name-field-feed-source');
         overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
@@ -98,6 +102,10 @@ gsb_tweetfeed = {
     var tempAppendTo = gsb_tweetfeed.appendTo,
     hashtagurl = '/gfsf_search_tweets?search=' + gsb_tweetfeed.search;
     $.getJSON( hashtagurl, function( data ) {
+      // hide the twitter block if empty
+      if (data['statuses'].length == 0) {
+        $(tempAppendTo).hide();
+      }
       var html = '<div class="tweet"><span class="tweet-from-user">FROM-USER: </span>TWEET_TEXT<div class="time">tweetime</div>';
       overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
       if (overrideTitle != '' && overrideTitle != ' ') {

@@ -108,12 +108,11 @@ gsb_tweetfeed = {
       }
       var html = '<div class="tweet"><span class="tweet-from-user">FROM-USER: </span>TWEET_TEXT<div class="time">tweetime</div>';
       overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
+      titleText = '';
       if (overrideTitle != '' && overrideTitle != ' ') {
         titleText = overrideTitle;
       }
-      else {
-        titleText = data[0].user.name;
-      }
+
       var $searchText = $('.field-name-field-feed-source');
       $searchText.remove();
       $('.field-name-field-twitter-search').replaceWith('<a target="_blank" href="' + 'https://twitter.com/#' + gsb_tweetfeed.search +'"><span class="twitter-title-text">' + titleText + '</span>#' + gsb_tweetfeed.search + '</a>');

@@ -88,8 +88,12 @@ gsb_tweetfeed = {
 
         // append tweets into page
         for (var i = 0; i < data.length; i++) {
+          var text = data[i].text;
+          if( typeof data[i].retweeted_status !== "undefined"){
+            text = "RT @" + data[i].retweeted_status.user.screen_name + " : " + data[i].retweeted_status.text;
+          }
           $(tempAppendTo).append(
-            html.replace('TWEET_TEXT', gsb_tweetfeed.ify.clean(data[i].text) )
+            html.replace('TWEET_TEXT', gsb_tweetfeed.ify.clean(text) )
             .replace(/USER/g, data[i].user.screen_name)
             .replace('tweetime', gsb_tweetfeed.tweetime(data[i].created_at) )
           );
@@ -117,8 +121,12 @@ gsb_tweetfeed = {
       $searchText.remove();
       $('.field-name-field-twitter-search').replaceWith('<a target="_blank" href="' + 'https://twitter.com/#' + gsb_tweetfeed.search +'"><span class="twitter-title-text">' + titleText + '</span>#' + gsb_tweetfeed.search + '</a>');
       for (var i = 0; i < gsb_tweetfeed.numTweets; i++) {
+        var text = data['statuses'][i].text;
+        if( typeof data['statuses'][i].retweeted_status !== "undefined"){
+          text = "RT @" + data['statuses'][i].retweeted_status.user.screen_name + " : " + data['statuses'][i].retweeted_status.text;
+        }
         $(tempAppendTo).append(
-          html.replace('TWEET_TEXT', gsb_tweetfeed.ify.clean(data['statuses'][i].text) )
+          html.replace('TWEET_TEXT', gsb_tweetfeed.ify.clean(text) )
           .replace('FROM-USER', data['statuses'][i].user.screen_name)
           .replace('tweetime', gsb_tweetfeed.tweetime(data['statuses'][i].created_at) )
         );

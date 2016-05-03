@@ -11,7 +11,7 @@ function gsb_feature_social_feed_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
-  // 'fieldable_panels_pane-social_feed-field_feed_source'
+  // 'fieldable_panels_pane-social_feed-field_feed_source'.
   $field_instances['fieldable_panels_pane-social_feed-field_feed_source'] = array(
     'bundle' => 'social_feed',
     'default_value' => array(
@@ -60,7 +60,7 @@ function gsb_feature_social_feed_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'fieldable_panels_pane-social_feed-field_social_display_num'
+  // 'fieldable_panels_pane-social_feed-field_social_display_num'.
   $field_instances['fieldable_panels_pane-social_feed-field_social_display_num'] = array(
     'bundle' => 'social_feed',
     'default_value' => array(
@@ -109,7 +109,7 @@ function gsb_feature_social_feed_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'fieldable_panels_pane-social_feed-field_social_twitter_title'
+  // 'fieldable_panels_pane-social_feed-field_social_twitter_title'.
   $field_instances['fieldable_panels_pane-social_feed-field_social_twitter_title'] = array(
     'bundle' => 'social_feed',
     'default_value' => NULL,
@@ -162,7 +162,7 @@ function gsb_feature_social_feed_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'fieldable_panels_pane-social_feed-field_twitter_search'
+  // 'fieldable_panels_pane-social_feed-field_twitter_search'.
   $field_instances['fieldable_panels_pane-social_feed-field_twitter_search'] = array(
     'bundle' => 'social_feed',
     'default_value' => NULL,

@@ -214,12 +214,59 @@ function gsb_feature_social_feed_field_default_field_instances() {
     'workbench_access_field' => 0,
   );
 
+  // Exported field_instance:
+  // 'fieldable_panels_pane-stackla_display-field_stackla_display'.
+  $field_instances['fieldable_panels_pane-stackla_display-field_stackla_display'] = array(
+    'bundle' => 'stackla_display',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => array(
+      0 => array(
+        'widget_data' => array(
+          'authenticate' => 'Authenticate',
+        ),
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'stackla_field',
+        'settings' => array(
+          'conditions' => array(),
+        ),
+        'type' => 'stackla_field_widget_formatter',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'fieldable_panels_pane',
+    'field_name' => 'field_stackla_display',
+    'label' => 'Stackla Display',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'stackla_field',
+      'settings' => array(),
+      'type' => 'stackla_field_widget',
+      'weight' => 31,
+    ),
+    'workbench_access_field' => 0,
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Enter in a title to override the default title from twitter.');
   t('Feed Source');
   t('Number of Tweets to Show');
   t('Override Title');
+  t('Stackla Display');
   t('Twitter Name/Hash Tag');
 
   return $field_instances;

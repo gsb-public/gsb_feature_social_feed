@@ -13,7 +13,6 @@ dependencies[] = gsb_feature_base_fields
 dependencies[] = link
 dependencies[] = list
 dependencies[] = options
-dependencies[] = stackla_field
 dependencies[] = strongarm
 dependencies[] = text
 datestamp = 1371136687

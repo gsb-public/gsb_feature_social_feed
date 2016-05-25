@@ -139,13 +139,12 @@ function gsb_feature_social_feed_library() {
  */
 function gsb_feature_social_feed_form_fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form_alter(&$form, &$form_state, $form_id) {
 
-  if (!empty($form['#bundle']) && $form['#form_id'] == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
-
+  if (!empty($form['#bundle']) && $form['#bundle'] == 'embed_stackla' &&  $form['#form_id'] == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
     global $user;
-
     $form['reusable']['#access'] = FALSE;
-    if (!in_array('administrator', $user->roles)) {
     $form['field_widget_code']['#access'] = FALSE;
+    if ((in_array('administrator', $user->roles)) || (in_array('marketing_admin', $user->roles))) {
+    $form['field_widget_code']['#access'] = TRUE;
    }
   }
   return $form;

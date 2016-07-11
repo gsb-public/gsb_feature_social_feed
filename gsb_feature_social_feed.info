@@ -24,7 +24,6 @@ features[ds_layout_settings][] = fieldable_panels_pane|social_feed|default
 features[features_api][] = api:2
 features[field_group][] = group_twitter_feed|fieldable_panels_pane|social_feed|form
 features[field_group][] = group_wrapper_twitter|fieldable_panels_pane|social_feed|default
-features[field_instance][] = fieldable_panels_pane-embed_stackla-field_widget_code
 features[field_instance][] = fieldable_panels_pane-social_feed-field_feed_source
 features[field_instance][] = fieldable_panels_pane-social_feed-field_social_display_num
 features[field_instance][] = fieldable_panels_pane-social_feed-field_social_twitter_title

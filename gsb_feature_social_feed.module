@@ -141,11 +141,41 @@ function gsb_feature_social_feed_form_fieldable_panels_panes_fieldable_panels_pa
 
   if (!empty($form['#bundle']) && $form['#bundle'] == 'embed_stackla' &&  $form['#form_id'] == 'fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form') {
     global $user;
+    $conf = $form_state['conf'];
+    $stackla_token = variable_get('stackla_access_token');
+    $stackla_url = "https://api.stackla.com/api/widgets?stack=stanford&access_token=" . $stackla_token;
+    $stackla_widgets = drupal_http_request($stackla_url);
+    $widget_contents = json_decode($stackla_widgets->data);
+    $widget_list = array();
+    foreach ($widget_contents->data as $id ) {
+      $widget_list[$id->id] = $id->name;
+    }
+    $form['field_stackla_name']['und']['#options'] = $widget_list;
+    $form['field_stackla_name']['und']['#default_value']=  $conf['field_stackla_name'];
     $form['reusable']['#access'] = FALSE;
-    $form['field_widget_code']['#access'] = FALSE;
-    if ((in_array('administrator', $user->roles)) || (in_array('marketing_admin', $user->roles))) {
-    $form['field_widget_code']['#access'] = TRUE;
-   }
+    $form['admin']['#access'] = FALSE;
   }
+  $form['#submit'][] = 'gsb_feature_social_feed_form_fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form_submit';
   return $form;
+}
+
+function gsb_feature_social_feed_form_fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form_submit(&$form, &$form_state, $form_id) {
+  $form_state['conf']['field_stackla_name'] =$form_state['entity']->field_stackla_name['und'][0]['value'];
+}
+/**
+ * Implements hook_panels_pane_content_alter().
+ */
+function gsb_feature_social_feed_preprocess_fieldable_panels_pane(&$variables) {
+  if ($variables['elements']['#entity_type'] == 'fieldable_panels_pane' && $variables['elements']['#bundle'] == 'embed_stackla') {
+    $stackla_token = variable_get('stackla_access_token');
+    $variables['elements']['#theme'] = 'panels-pane-stackla-display';
+    $variables['theme_hook_suggestions'][0] = 'panels-pane-stackla-display';
+    $stackla_id = $variables['elements']['#fieldable_panels_pane']->field_stackla_name['und'][0]['value'];
+    $variables['elements']['#fieldable_panels_pane']->conf['stackla_name'] = $variables['elements']['#fieldable_panels_pane']->field_stackla_name['und'][0]['value'];
+    $stackla_url = 'https://api.stackla.com:443/api/widgets/' . $stackla_id . '?stack=stanford&access_token=' . $stackla_token;
+    $stackla_details = drupal_http_request($stackla_url);
+    $stackla_values = json_decode($stackla_details->data);
+    $variables['content']['embed_code']['#markup'] = $stackla_values->data->embed_code;
+  }
+
 }

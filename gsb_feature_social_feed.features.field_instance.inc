@@ -11,6 +11,44 @@ function gsb_feature_social_feed_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
+  // 'fieldable_panels_pane-embed_stackla-field_stackla_name'.
+  $field_instances['fieldable_panels_pane-embed_stackla-field_stackla_name'] = array(
+    'bundle' => 'embed_stackla',
+    'custom_add_another' => '',
+    'custom_remove' => '',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'fieldable_panels_pane',
+    'field_name' => 'field_stackla_name',
+    'label' => 'Name',
+    'required' => 0,
+    'settings' => array(
+      'custom_add_another' => '',
+      'custom_remove' => '',
+      'use_hierarchical_select_lite' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 32,
+    ),
+    'workbench_access_field' => 0,
+  );
+
+  // Exported field_instance:
   // 'fieldable_panels_pane-social_feed-field_feed_source'.
   $field_instances['fieldable_panels_pane-social_feed-field_feed_source'] = array(
     'bundle' => 'social_feed',
@@ -218,6 +256,7 @@ function gsb_feature_social_feed_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Enter in a title to override the default title from twitter.');
   t('Feed Source');
+  t('Name');
   t('Number of Tweets to Show');
   t('Override Title');
   t('Twitter Name/Hash Tag');

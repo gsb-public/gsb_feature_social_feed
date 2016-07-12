@@ -152,6 +152,7 @@ function gsb_feature_social_feed_form_fieldable_panels_panes_fieldable_panels_pa
     }
     $form['field_stackla_name']['und']['#options'] = $widget_list;
     $form['field_stackla_name']['und']['#default_value']=  $conf['field_stackla_name'];
+    $form['field_stackla_name']['und']["#title"] = "Widget Name";
     $form['reusable']['#access'] = FALSE;
     $form['admin']['#access'] = FALSE;
   }

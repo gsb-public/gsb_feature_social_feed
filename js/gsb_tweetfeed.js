@@ -75,17 +75,17 @@ gsb_tweetfeed = {
         }
         var html = '<div class="tweet">TWEET_TEXT<div class="time">tweetime</div></div>';
         var title = $(tempAppendTo).find('.field-name-field-feed-source');
-        overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
+        var overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
+        var titleText = '';
         if (overrideTitle != '' && overrideTitle != ' ') {
           titleText = overrideTitle;
         }
         else {
           titleText = data[0].user.name;
         }
-
-        var $searchText = $('.field-name-field-twitter-search');
-        title.html('<a target="_blank" href="' + 'https://twitter.com/' + data[0].user.screen_name +'"><span class="twitter-title-text">' + titleText + '</span>\n<span class="twitter-search-text">' + $searchText.text() + '</span></a>');          $searchText.remove();
-
+        var $searchText = $(tempAppendTo).find('.field-name-field-twitter-search');
+        title.html('<a target="_blank" href="' + 'https://twitter.com/' + data[0].user.screen_name +'"><span class="twitter-title-text">' + titleText + '</span>\n<span class="twitter-search-text">' + $searchText.text() + '</span></a>');          
+        $searchText.remove();
         // append tweets into page
         for (var i = 0; i < data.length; i++) {
           var text = data[i].text;
@@ -111,15 +111,14 @@ gsb_tweetfeed = {
         $(tempAppendTo).hide();
       }
       var html = '<div class="tweet"><span class="tweet-from-user">FROM-USER: </span>TWEET_TEXT<div class="time">tweetime</div>';
-      overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
-      titleText = '';
+      var overrideTitle = $(tempAppendTo).find('.field-name-field-social-twitter-title .field-item').text();
+      var titleText = '';
       if (overrideTitle != '' && overrideTitle != ' ') {
         titleText = overrideTitle;
       }
-
-      var $searchText = $('.field-name-field-feed-source');
+      var $searchText = $(tempAppendTo).find('.field-name-field-feed-source');
       $searchText.remove();
-      $('.field-name-field-twitter-search').replaceWith('<a target="_blank" href="' + 'https://twitter.com/#' + gsb_tweetfeed.search +'"><span class="twitter-title-text">' + titleText + '</span>#' + gsb_tweetfeed.search + '</a>');
+      $(tempAppendTo).find('.field-name-field-twitter-search').replaceWith('<a target="_blank" href="' + 'https://twitter.com/#' + gsb_tweetfeed.search +'"><span class="twitter-title-text">' + titleText + '</span>#' + gsb_tweetfeed.search + '</a>');
       for (var i = 0; i < gsb_tweetfeed.numTweets; i++) {
         var text = data['statuses'][i].text;
         if( typeof data['statuses'][i].retweeted_status !== "undefined"){

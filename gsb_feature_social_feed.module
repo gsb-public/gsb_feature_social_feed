@@ -160,7 +160,7 @@ function gsb_feature_social_feed_form_fieldable_panels_panes_fieldable_panels_pa
   return $form;
 }
 
-function gsb_feature_social_feed_form_fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form_submit(&$form, &$form_state, $form_id) {
+function gsb_feature_social_feed_form_fieldable_panels_panes_fieldable_panels_pane_content_type_edit_form_submit($form, &$form_state) {
   $form_state['conf']['field_stackla_name'] =$form_state['entity']->field_stackla_name['und'][0]['value'];
 }
 /**
